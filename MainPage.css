@@ -1,0 +1,72 @@
+/* ID */
+#topheader {
+    background-color: #FFFFFF;
+    position: fixed;
+}
+
+#footer {
+    background-color: #FFFFFF;
+}
+
+#content {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+#topheaderlink {
+    /* links in the top header */
+    padding-left: 50px;
+    font-size: 13px;
+}
+
+
+/* CLASS */
+.navbar{
+    min-width: 800px;
+    min-height: 20px;
+    position: fixed;
+}
+
+.navbar-default {
+    /* padding in the left and right of top header */
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.navbar-default .navbar-brand {
+    /* Brand (aka app name) in the top header */
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff5050;
+    float: left;
+    margin-left: auto;
+}
+
+.navbar-header {
+    /* for the top header buttons to keep right */
+    width:100%;
+}
+
+.right-side-button {
+    /* keeps buttons in top header align to right */
+    float:right;
+}
+
+.btn {
+    /* spacing between buttons */
+    margin-left:10px;
+}
+
+
+/* TAGS */
+body {
+    width: 100%;
+    background-color: #ff5050;
+    padding-top: 80px;
+}
+
+li {
+    position: fixed;
+}
