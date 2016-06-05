@@ -13,12 +13,14 @@
     width: 100%;
     padding: 10px;
     text-align: center;
+    display: block;
+    color: #333333;
 }
 
 #topheaderlink {
     /* links in the top header */
     padding-left: 50px;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 
@@ -37,9 +39,9 @@
 
 .navbar-default .navbar-brand {
     /* Brand (aka app name) in the top header */
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
-    color: #ff5050;
+    color: #ff3333;
     float: left;
     margin-left: auto;
 }
@@ -69,4 +71,8 @@ body {
 
 li {
     position: fixed;
+}
+
+h1 {
+    
 }
