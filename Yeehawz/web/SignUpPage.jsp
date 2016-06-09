@@ -1,6 +1,6 @@
 <%-- 
-    Document   : MainPage
-    Created on : 06-Jun-2016, 15:35:44
+    Document   : SignUpPage
+    Created on : 08-Jun-2016, 10:31:11
     Author     : hannah
 --%>
 
@@ -16,7 +16,7 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         
         <!-- Link to CSS file -->
-        <link rel="stylesheet" href="MainPage.css">
+        <link rel="stylesheet" href="SignUpPage.css">
         
         <title>
             Yeehawz
@@ -24,24 +24,6 @@
         
         <!-- Script for functions -->
         <script>
-            // JAVASCRIPT
-            /*function loginCheck(){
-                var user = document.getElementById('usernameTxtBox').value;
-                var pass = document.getElementById('passwordTxtBox').value;
-                
-                if(user == "admin" && pass == "admin")
-                {
-                    document.loginForm.action = "TaskMainPage.jsp";
-                    document.loginForm.submit();
-                    window.location = "TaskMainPage.jsp";
-                    
-                }
-            }
-            
-            function signUp(){
-                window.location = "SignUpPage.jsp";
-            }*/
-            
             $(document).ready(function(){
                 
                 $('#goHome').on('click', function(){
@@ -62,19 +44,34 @@
                     else
                     {
                         return false;
-                    }  
+                    }
+                        
                 });
                 
                 $('#signupBtn').on('click', function(){
                     window.location.href = "SignUpPage.jsp";
                 });
                 
+                $('#signUp').submit(function(event)){
+                    event.preventDefault();
+                    
+//                    var fullname = $("#fullname").val();
+//                    var user = $("#username").val();
+//                    var email = $("#username").val();
+//                    var pass = $("#password").val();
+//                    var confpass = $("#password_confirm").val();
+//                    
+//                    alert(fullname + " " + user + " " + email + " " + pass + " " + confpass);
+                    alert("BANANANA");
+                });
+                
             });
             
         </script>
-    </head>
-    <body>
         
+    </head>
+    
+    <body>
         <div class="container-fluid">
             
             <!-- The HEADER and the buttons/links in it -->
@@ -115,28 +112,58 @@
             </nav> <!-- /navbar top header -->
             
             <!-- CONTENT -->
-            <div id="content">
-                <div class="container-fluid">
+            <div class="container-fluid" id="content">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <form class="form-horizontal" id="signUp" name="signUp">
+                            <fieldset>
+                                <div id="legend">
+                                    <legend class="">Register</legend>
+                                </div>
+
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="text" id="fullname" name="fullname" placeholder="Fullname" class="form-control input-lg">
+                                    </div>
+                                </div>
                     
-                    <!-- Text -->
-                    <div id="contenttext">
-                        <h1>
-                        The perfect to-do app for lazy bummers.
-                        <br>
-                        (pls change...)
-                        <br>
-                        [insert proper thingy here]
-                        </h1>
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="text" id="username" name="username" placeholder="Username" class="form-control input-lg">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="email" id="email" name="email" placeholder="E-mail" class="form-control input-lg">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="password" id="password" name="password" placeholder="Password" class="form-control input-lg">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="password" id="password_confirm" name="password_confirm" placeholder="Confirm Password" class="form-control input-lg">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="submit" id="signupSubmit" name="signupSubmit" class="btn btn-success" value="Sign Up"/>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
                     </div>
-                    
-                    <!-- Image -->
-                    <div id="contentimg">
-                        
-                    </div>
-                    
-                </div>
-            </div><!-- /content -->
-            
+                </div> 
+            </div>
+
+
             <!-- The FOOTER and the buttons/links in it -->
             <nav class="navbar navbar-default navbar-fixed-bottom" id="footer">
                 <div class="container-fluid">
