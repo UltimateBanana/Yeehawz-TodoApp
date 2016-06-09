@@ -1,0 +1,108 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-Jun-2016, 12:47:37
+    Author     : hannah
+*/
+
+/* ID */
+#topheader {
+    background-color: #FFFFFF;
+    position: fixed;
+}
+
+#footer {
+    background-color: #FFFFFF;
+}
+
+#topheaderlink {
+    /* links in the top header */
+    padding-left: 50px;
+    font-size: 15px;
+}
+
+#content {
+    width: 300px;
+    height: auto;
+    overflow: auto;
+    background-color: #FFFFFF;
+    margin: auto;
+    border: 5px solid #FFFFFF;
+    border-radius: 5px;
+}
+
+
+/* CLASS */
+.navbar{
+    min-width: 800px;
+    min-height: 20px;
+    position: fixed;
+}
+
+.navbar-default {
+    /* padding in the left and right of top header */
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.navbar-default .navbar-brand {
+    /* Brand (aka app name) in the top header */
+    font-size: 40px;
+    font-weight: bold;
+    color: #ff3333;
+    float: left;
+    margin-left: auto;
+}
+
+.navbar-header {
+    /* for the top header buttons to keep right */
+    width:100%;
+}
+
+.navbar-brand:hover, 
+.navbar-brand:focus {
+  color: #ff3333 !important;
+}
+
+.navbar-brand {
+    padding-top: 20px;
+}
+
+.navbar-nav {
+    padding-top: 10px;
+}
+
+.right-side-button {
+    /* keeps buttons in top header align to right */
+    float:right;
+}
+
+.btn {
+    /* spacing between buttons */
+    margin-left:10px;
+}
+
+.control-group {
+    padding-bottom: 15px;
+}
+
+/*.container {
+    background-color: #FFFFFF;
+    overflow:auto;
+    display:inline-block;
+}*/
+
+
+/* TAGS */
+body {
+    width: 100%;
+    background-color: #ff5050;
+    padding-top: 80px;
+}
+
+li {
+    position: fixed;
+}
