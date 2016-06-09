@@ -1,11 +1,10 @@
-<%--
+<%-- 
     Document   : TaskMainPage
     Created on : 06-Jun-2016, 18:37:58
     Author     : hannah
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,59 +14,40 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+        
         <!-- Link to CSS file -->
         <link rel="stylesheet" href="TaskMainPage.css">
-
+        
         <title>
             Yeehawz
         </title>
-
+        
         <!-- Script for functions -->
         <script>
             // JQUERY
             $(document).ready(function(){
-
+                
                 $('#logoutHref').on('click', function(){
                     window.location = "index.jsp";
                 });
             });
-
+            
         </script>
-        <script>
-    			$(document).ready(function(){
-
-    			    $("#addTask").click(function(){
-    			    	var x = $("#task").val();
-    			        $("#taskList").append('<li class='+ '"list-group-item"'+ '>'+ x +'</li>');
-    			        console.log(x);
-    			    });
-    			});
-    		</script>
-        <style>
-          .margin12 {
-              margin-top: 12px;
-          }
-
-          .margin11 {
-              margin-top: 11.5px;
-          }
-        </style>
     </head>
     <body>
-
+        
         <div class="container-fluid">
-
+            
             <!-- The HEADER and the buttons/links in it -->
             <nav class="navbar navbar-default navbar-fixed-top" id="topheader">
                 <div class="container-fluid">
                     <div class="navbar-header">
-
+                        
                         <!-- Brand (aka the app name) -->
-                        <a class="navbar-brand" href="#topheader">
+                        <a class="navbar-brand" href="#topheader"> 
                             Yeehawz
                         </a>
-
+                        
                         <!-- Buttons -->
                         <ul class="nav navbar-nav navbar-right" id="topheaderlink">
                             <!-- Add new task BUTTON -->
@@ -84,7 +64,7 @@
                                     Firstname Lastname
                                     <span class="glyphicon glyphicon-user pull-right"></span>
                                 </a>
-                                <ul  class="dropdown-menu">
+                                <ul class="dropdown-menu">
                                     <li><a href="#">Account Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
@@ -98,40 +78,12 @@
                     </div>
                 </div><!-- /container-fluid -->
             </nav><!-- /navbar top header END OF HEADER-->
-
-
+            
+            
             <!-- BODY CONTENT -->
             <div>
-              <div class="row">
-                <form>
-                  <div class="col-md-3"></div>
-                  <div class="col-md-6">
-                    <div class="card">
-                      <ul id = "taskList" class="list-group list-group-flush">
-                        <li class="list-group-item">
-
-                          <div class="row center-block">
-                            <div class="col-md-10 ">
-                              <fieldset class="form-group">
-                                <input type="text" class="form-control margin12" id="task" placeholder="Type Task">
-                              </fieldset>
-                            </div>
-                            <div class="col-md-2">
-                              <button id = "addTask" type="button" class="btn btn-success margin11">Add Task</button>
-                            </div>
-                          </div>
-
-                        </li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-3"></div>
-              </form>
-              </div>
             </div>
+            
         </div><!-- /container-fluid BODY -->
     </body>
 </html>
