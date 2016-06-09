@@ -45,7 +45,7 @@
             $(document).ready(function(){
                 
                 $('#goHome').on('click', function(){
-                    window.location = "index.jsp";
+                    window.location.href = "index.jsp";
                 });
                 
                 $('#loginForm').submit(function(event){
@@ -56,7 +56,6 @@
                 
                     if(user === "admin" && pass === "admin")
                     {
-                        alert("LogIn : " + user + " " + pass);
                         window.location.href = "TaskMainPage.jsp";
                     }
                     else

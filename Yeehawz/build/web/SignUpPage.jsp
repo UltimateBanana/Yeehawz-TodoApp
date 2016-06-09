@@ -27,7 +27,7 @@
             $(document).ready(function(){
                 
                 $('#goHome').on('click', function(){
-                    window.location = "index.jsp";
+                    window.location.href = "index.jsp";
                 });
                 
                 $('#loginForm').submit(function(event){
@@ -62,7 +62,7 @@
 //                    var confpass = $("#password_confirm").val();
 //                    
 //                    alert(fullname + " " + user + " " + email + " " + pass + " " + confpass);
-                    alert("BANANANAna");
+                    alert("BANANANA");
                 });
                 
             });
