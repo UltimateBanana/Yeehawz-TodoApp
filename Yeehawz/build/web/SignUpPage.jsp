@@ -62,7 +62,7 @@
 //                    var confpass = $("#password_confirm").val();
 //                    
 //                    alert(fullname + " " + user + " " + email + " " + pass + " " + confpass);
-                    alert("BANANANA");
+                    alert("BANANANAna");
                 });
                 
             });
