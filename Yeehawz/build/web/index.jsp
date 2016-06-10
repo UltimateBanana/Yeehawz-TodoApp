@@ -25,35 +25,50 @@
         <!-- Script for functions -->
         <script>
             // JAVASCRIPT
-            function loginCheck(){
+            /*function loginCheck(){
                 var user = document.getElementById('usernameTxtBox').value;
                 var pass = document.getElementById('passwordTxtBox').value;
                 
                 if(user == "admin" && pass == "admin")
                 {
-//                    document.loginForm.action = "TaskMainPage.jsp";
-//                    document.loginForm.submit();
+                    document.loginForm.action = "TaskMainPage.jsp";
+                    document.loginForm.submit();
                     window.location = "TaskMainPage.jsp";
                     
                 }
             }
             
-            /*$(document).ready(function(){
+            function signUp(){
+                window.location = "SignUpPage.jsp";
+            }*/
+            
+            $(document).ready(function(){
                 
-                $('.loginForm').click(function(){
-                    
-                    var user = document.getElementById('usernameTxtBox').value;
-                    var pass = document.getElementById('passwordTxtBox').value;
-                
-                    if(user == "admin" && pass == "admin")
-                    {
-                        window.location = "TaskMainPage.html";
-                    }
-                    
-                    window.location = "TaskMainPage.html";    
+                $('#goHome').on('click', function(){
+                    window.location.href = "index.jsp";
                 });
                 
-            })*/
+                $('#loginForm').submit(function(event){
+                    event.preventDefault();
+                    
+                    var user = $("#usernameTxtBox").val();
+                    var pass = $("#passwordTxtBox").val();
+                
+                    if(user === "admin" && pass === "admin")
+                    {
+                        window.location.href = "TaskMainPage.jsp";
+                    }
+                    else
+                    {
+                        return false;
+                    }  
+                });
+                
+                $('#signupBtn').on('click', function(){
+                    window.location.href = "SignUpPage.jsp";
+                });
+                
+            });
             
         </script>
     </head>
@@ -67,7 +82,7 @@
                     <div class="navbar-header">
                         
                         <!-- Brand (aka the app name) -->
-                        <a class="navbar-brand" href="#topheader"> 
+                        <a class="navbar-brand" href="#" id="goHome" name="goHome"> 
                             Yeehawz
                         </a>
                         
@@ -78,19 +93,19 @@
                         </ul>
 
                         <!-- Sign Up Button -->
-                        <form class="navbar-form navbar-right" name="signupForm">
-                            <button type="button" class="btn btn-default navbar-btn" id="signupBtn">Sign Up</button>
+                        <form class="navbar-form navbar-right" id="signupForm" name="signupForm">
+                            <input type="button" class="btn btn-default navbar-btn" id="signupBtn" name="signupBtn" value="Sign Up" />
                         </form>
                         
                         <!-- Log In: username and password -->
-                        <form class="navbar-form navbar-right" name="loginForm">
+                        <form class="navbar-form navbar-right" id="loginForm" name="loginForm">
                             <label class="sr-only" for="inputUsername">Username</label>
                             <input type="text" class="form-control" id="usernameTxtBox" name="usernameTxtBox" placeholder="Username"/>
                             <label class="sr-only" for="inputPassword">Password</label>
                             <input type="password" class="form-control" id="passwordTxtBox" name="passwordTxtBox" placeholder="Password"/>
 
                             <!-- Log In Button -->
-                            <button id="loginSubmit" name="loginSubmit" type="submit" class="btn btn-default navbar-btn" onclick="loginCheck(); return false;">Log In</button>
+                            <input type="submit" class="btn btn-default navbar-btn" id="loginSubmit" name="loginSubmit" value="Log In" />
                             
                         </form>
                         
