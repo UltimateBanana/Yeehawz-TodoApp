@@ -1,10 +1,3 @@
-<%--
-    Document   : TaskMainPage
-    Created on : 06-Jun-2016, 18:37:58
-    Author     : hannah
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -39,10 +32,18 @@
 
     			    $("#addTask").click(function(){
     			    	var x = $("#task").val();
-    			        $("#taskList").append('<li class='+ '"list-group-item"'+ '>'+ x +'</li>');
+
+    			        $("#taskList").append('<li class='+ '"list-group-item"'+ '>'+ x + '<span class="glyphicon glyphicon-trash pull-right deleteMe"> </span> </li>');
     			        console.log(x);
     			    });
     			});
+
+
+          $(document).on('click', '.deleteMe',function(){
+              $(this).closest("li").remove();
+
+          });
+
     		</script>
         <style>
           .margin12 {
@@ -122,8 +123,8 @@
                           </div>
 
                         </li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item" data-toggle="modal" data-target="#myModal"> Dapibus ac facilisis in  <span class="glyphicon glyphicon-trash pull-right deleteMe"> </span> </li>
+                        <li class="list-group-item">Vestibulum at eros <span class="glyphicon glyphicon-trash pull-right deleteMe"> </span> </li>
 
                       </ul>
                     </div>
@@ -133,5 +134,26 @@
               </div>
             </div>
         </div><!-- /container-fluid BODY -->
+
+        <!-- Task -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- View Task Content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+              </div>
+              <div class="modal-body">
+                <p>Some text in the modal.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
     </body>
 </html>
