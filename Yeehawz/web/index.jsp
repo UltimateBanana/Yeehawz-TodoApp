@@ -48,21 +48,21 @@
                     window.location.href = "index.jsp";
                 });
                 
-                $('#loginForm').submit(function(event){
-                    event.preventDefault();
-                    
-                    var user = $("#usernameTxtBox").val();
-                    var pass = $("#passwordTxtBox").val();
-                
-                    if(user === "admin" && pass === "admin")
-                    {
-                        window.location.href = "TaskMainPage.jsp";
-                    }
-                    else
-                    {
-                        return false;
-                    }  
-                });
+//                $('#loginForm').submit(function(event){
+//                    event.preventDefault();
+//                    
+//                    var user = $("#usernameTxtBox").val();
+//                    var pass = $("#passwordTxtBox").val();
+//                
+//                    if(user === "admin" && pass === "admin")
+//                    {
+//                        window.location.href = "TaskMainPage.jsp";
+//                    }
+//                    else
+//                    {
+//                        return false;
+//                    }  
+//                });
                 
                 $('#signupBtn').on('click', function(){
                     window.location.href = "SignUpPage.jsp";
@@ -98,11 +98,11 @@
                         </form>
                         
                         <!-- Log In: username and password -->
-                        <form class="navbar-form navbar-right" id="loginForm" name="loginForm">
+                        <form class="navbar-form navbar-right" id="loginForm" name="loginForm" action="LoginServlet" method="post">
                             <label class="sr-only" for="inputUsername">Username</label>
-                            <input type="text" class="form-control" id="usernameTxtBox" name="usernameTxtBox" placeholder="Username"/>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username"/>
                             <label class="sr-only" for="inputPassword">Password</label>
-                            <input type="password" class="form-control" id="passwordTxtBox" name="passwordTxtBox" placeholder="Password"/>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
 
                             <!-- Log In Button -->
                             <input type="submit" class="btn btn-default navbar-btn" id="loginSubmit" name="loginSubmit" value="Log In" />
