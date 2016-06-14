@@ -116,7 +116,7 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                        <form class="form-horizontal" id="signUp" name="signUp">
+                        <form class="form-horizontal" id="signUp" name="signUp" action="RegisterServlet" method="post">
                             <fieldset>
                                 <div id="legend">
                                     <legend class="">Register</legend>
@@ -124,10 +124,16 @@
 
                                 <div class="control-group">
                                     <div class="controls">
-                                        <input type="text" id="fullname" name="fullname" placeholder="Fullname" class="form-control input-lg">
+                                        <input type="text" id="first_name" name="first_name" placeholder="First Name" class="form-control input-lg">
                                     </div>
                                 </div>
                     
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="text" id="last_name" name="last_name" placeholder="Last Name" class="form-control input-lg">
+                                    </div>
+                                </div>
+                                
                                 <div class="control-group">
                                     <div class="controls">
                                         <input type="text" id="username" name="username" placeholder="Username" class="form-control input-lg">
