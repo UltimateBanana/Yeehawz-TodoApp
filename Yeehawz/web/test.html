@@ -9,6 +9,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+        <script src="bootstrap-datepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="datepicker.css">
+
         <!-- Link to CSS file -->
         <link rel="stylesheet" href="TaskMainPage.css">
 
@@ -140,7 +143,10 @@
                           </div>
                           <div class = "row center-block">
                             <div class ="col-mid-12 center-block">
-                              <span class="glyphicon glyphicon-calendar marginLeftTop"> </span>
+                              <input type = "text" class="datepicker" placeholder="Schedule">
+                              <script>
+                                $('.datepicker').datepicker();
+                              </script>
                             </div>
                           </div>
 
