@@ -33,8 +33,13 @@
     			    $("#addTask").click(function(){
     			    	var x = $("#task").val();
 
+                if(!x){
+                  alert("Please enter text")
+                }
+                else{
     			        $("#taskList").append('<li class='+ '"list-group-item"'+ '>'+ x + '<span class="glyphicon glyphicon-trash pull-right deleteMe"> </span> </li>');
-    			        console.log(x);
+                  }
+                  console.log(x);
     			    });
     			});
 
