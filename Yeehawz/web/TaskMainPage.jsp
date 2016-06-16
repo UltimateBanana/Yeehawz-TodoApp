@@ -34,7 +34,7 @@
             // MODAL STUFF
             $(document).ready(function(){
 
-                $("#addTask").click(function(){
+                $("#createTask").submit(function(){
                     var x = $("#task").val();
 
                     if(!x){
@@ -150,7 +150,7 @@
                                                     </script>
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <button id = "addTask" type="button" class="btn btn-success margin11">Add Task</button>
+                                                    <input id = "addTask" type="submit" class="btn btn-success margin11" value="Add Task">
                                                 </div>
                                         </form>
                                     </div>
@@ -214,7 +214,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <input type="button" class="btn btn-primary" id="editSave" value="Save changes">
+                            <input type="submit" class="btn btn-primary" id="editSave" value="Save changes">
                         </div>
                     </form>
                 </div>
