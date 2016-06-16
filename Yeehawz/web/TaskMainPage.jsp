@@ -36,6 +36,8 @@
 
                 $("#createTask").submit(function(){
                     var x = $("#task").val();
+                    
+                    alert($())
 
                     if(!x){
                         alert("Please enter text")
@@ -144,7 +146,7 @@
                                                 <div class="col-md-10 ">
                                                     <input type="text" class="form-control margin12" id="task" placeholder="Type Task" style="margin-bottom: 10px;">
                                                     <textarea class="form-control" id="descriptionTextArea" rows="3" placeholder="Enter a description" style="resize: none; margin-bottom: 10px;"></textarea>
-                                                    <input type = "text" class="datepicker" placeholder="Schedule">
+                                                    <input type = "text" class="datepickerCreateTask" placeholder="Schedule">
                                                     <script>
                                                       $('.datepicker').datepicker();
                                                     </script>
@@ -207,7 +209,7 @@
                         <div class="modal-body">
                             <input type="text" class="form-control" id="editTitle" value="Well shiiiiit" style="margin-bottom: 20px;">
                             <textarea rows="5" class="form-control" id="editDescription" style="resize: none; margin-bottom: 20px;">EEEEYYYYY</textarea>
-                            <input type="text" class="datepicker" placeholder="Schedule" style="display: block!important;">
+                            <input type="text" class="datepickerEditTask" placeholder="Schedule" style="display: block!important;">
                             <script>
                                 $('.datepicker').datepicker();
                             </script>
