@@ -85,8 +85,10 @@ and open the template in the editor.
     margin-left:10px;
 }
 
-.control-group {
+.form-group .controls{
     padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /*.container {
