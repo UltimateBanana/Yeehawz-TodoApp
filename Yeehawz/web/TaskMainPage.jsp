@@ -146,7 +146,7 @@
                                                 <div class="col-md-10 ">
                                                     <input type="text" class="form-control margin12" id="task" placeholder="Type Task" style="margin-bottom: 10px;">
                                                     <textarea class="form-control" id="descriptionTextArea" rows="3" placeholder="Enter a description" style="resize: none; margin-bottom: 10px;"></textarea>
-                                                    <input type = "text" class="datepicker" id="#datepickerCreateTask" placeholder="Schedule">
+                                                    <input type = "text" class="datepicker" id="datepickerCreateTask" placeholder="Schedule">
                                                     <script>
                                                       $('.datepicker').datepicker();
                                                     </script>
