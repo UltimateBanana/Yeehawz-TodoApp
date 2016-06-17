@@ -6,7 +6,7 @@ import com.mysql.jdbc.Connection;
 
 public class DatabaseConnector
 {
-    private Connection	connection;
+    private static Connection connection;
     private static DatabaseConnector dbConn;
 
     private DatabaseConnector()
@@ -29,7 +29,7 @@ public class DatabaseConnector
         } 
     }
 
-    public Connection getConnection()
+    public static Connection getConnection()
     {
         return connection;
     }

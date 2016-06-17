@@ -3,6 +3,7 @@ package database;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.User;
@@ -70,7 +71,7 @@ public class UserManager
 	
 	try
 	{
-	    ps = connection.getConnection().prepareStatement(sql);
+	    ps = connection.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 	    ps.setString(1, user.getFirstName());
 	    ps.setString(2, user.getLastName());
 	    ps.setString(3, user.getUsername());

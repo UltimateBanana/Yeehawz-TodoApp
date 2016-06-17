@@ -8,6 +8,7 @@ package servlet;
 import controller.Controller;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
 import javax.servlet.ServletException;
@@ -71,7 +72,26 @@ public class AddTaskServlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException
     {
-	processRequest(request, response);
+//	processRequest(request, response);
+        
+        // Get only the title ng task of user[1]
+        
+        ArrayList<Task> taskList = new ArrayList<Task>();
+        Controller controller = new Controller();
+        taskList = controller.getAllUserTasks("1");
+        
+        for(int i = 0; i < taskList.size(); i++)
+        {
+//            System.out.println("Task : " + taskList.get(i).getTitle());
+//            request.setAttribute("getTask", taskList.get(i).getTitle());
+//            response.setContentType("text/html");
+//            request.setAttribute("todo", taskList.get(i).getTitle());
+//            request.getRequestDispatcher("/TaskMainPage.jsp").forward(request, response);
+        }
+        
+        response.setContentType("text/html");
+        request.setAttribute("todo", "10");
+        request.getRequestDispatcher("/TaskMainPage.jsp").forward(request, response);
     }
 
     /**
@@ -92,20 +112,37 @@ public class AddTaskServlet extends HttpServlet
 	String userId = request.getParameter(User.COLUMN_ID);
 	String title = request.getParameter(Task.COLUMN_TITLE);
 	String description = request.getParameter(Task.COLUMN_DESCRIPTION);
+	String schedule = request.getParameter(Task.COLUMN_SCHEDULE);
+	String[] date = schedule.split("/");
+	System.out.println(date[0] + " " + date[1] + " " + date[2]);
+	
 	Calendar calendar = Calendar.getInstance();
+	calendar.setTime(new Date(Integer.parseInt(date[2]) - 1900, Integer.parseInt(date[0]) - 1, Integer.parseInt(date[1])));
+	System.out.println("SHIT: " + calendar.get(Calendar.MONTH) + " " + calendar.get(Calendar.DAY_OF_MONTH) + " " + calendar.get(Calendar.YEAR));
+	
 	ArrayList<Tag> tagList = new ArrayList<>();
 	
 	Task task = new Task(title, description, calendar, tagList);
 	
 	Controller controller = new Controller();
 	
-	int id = controller.insertTask(userId, task);
+	//todo: change to userID when sessions are fixed
+	int id = controller.insertTask("1", task);
 	
 	if( id != -999 )
 	{
 	    task.setTaskId(Integer.toString(id));
 	}
 	
+        // ADD <li> UI HERE
+        ArrayList<Task> taskList = new ArrayList<Task>();
+        taskList = controller.getAllUserTasks("1");
+
+        request.setAttribute("tasks", taskList);
+        request.getRequestDispatcher("/TaskMainPage.jsp").forward(request, response);
+            
+        
+        response.sendRedirect("TaskMainPage.jsp");
 	// return task
     }
 
