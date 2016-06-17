@@ -3,6 +3,7 @@ package database;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.logging.Level;
@@ -163,7 +164,7 @@ public class TaskManager
 	
 	try
 	{
-	    ps = connection.getConnection().prepareStatement(sql);
+	    ps = connection.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 	    ps.setInt(1, Integer.parseInt(userId));
 	    ps.setString(2, task.getTitle());
 	    ps.setString(3, task.getDescription());

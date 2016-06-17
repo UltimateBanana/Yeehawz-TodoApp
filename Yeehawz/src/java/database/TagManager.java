@@ -3,6 +3,7 @@ package database;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -152,7 +153,7 @@ public class TagManager
 	
 	try
 	{
-	    ps = connection.getConnection().prepareStatement(sql);
+	    ps = connection.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 	    ps.setString(1, tag.getTag());
 	    
 	    int affectedRows = ps.executeUpdate();
