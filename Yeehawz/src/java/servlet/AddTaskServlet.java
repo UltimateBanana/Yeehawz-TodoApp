@@ -72,7 +72,26 @@ public class AddTaskServlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException
     {
-	processRequest(request, response);
+//	processRequest(request, response);
+        
+        // Get only the title ng task of user[1]
+        
+        ArrayList<Task> taskList = new ArrayList<Task>();
+        Controller controller = new Controller();
+        taskList = controller.getAllUserTasks("1");
+        
+        for(int i = 0; i < taskList.size(); i++)
+        {
+//            System.out.println("Task : " + taskList.get(i).getTitle());
+//            request.setAttribute("getTask", taskList.get(i).getTitle());
+//            response.setContentType("text/html");
+//            request.setAttribute("todo", taskList.get(i).getTitle());
+//            request.getRequestDispatcher("/TaskMainPage.jsp").forward(request, response);
+        }
+        
+        response.setContentType("text/html");
+        request.setAttribute("todo", "10");
+        request.getRequestDispatcher("/TaskMainPage.jsp").forward(request, response);
     }
 
     /**
@@ -115,6 +134,15 @@ public class AddTaskServlet extends HttpServlet
 	    task.setTaskId(Integer.toString(id));
 	}
 	
+        // ADD <li> UI HERE
+        ArrayList<Task> taskList = new ArrayList<Task>();
+        taskList = controller.getAllUserTasks("1");
+
+        request.setAttribute("tasks", taskList);
+        request.getRequestDispatcher("/TaskMainPage.jsp").forward(request, response);
+            
+        
+        response.sendRedirect("TaskMainPage.jsp");
 	// return task
     }
 

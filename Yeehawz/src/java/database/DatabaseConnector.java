@@ -14,7 +14,7 @@ public class DatabaseConnector
         String dbname = "yeehawz";
         String connurl = "jdbc:mysql://localhost:3306/" + dbname;
         String username = "root";
-        String password = "I@mtheEXECUTOR";
+        String password = "joshansar";
 
         try
         {

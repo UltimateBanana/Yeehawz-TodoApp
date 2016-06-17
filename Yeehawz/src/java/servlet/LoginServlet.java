@@ -3,11 +3,13 @@ package servlet;
 import controller.Controller;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Task;
 import model.User;
 
 @WebServlet(name = "LoginServlet", urlPatterns =
@@ -83,6 +85,12 @@ public class LoginServlet extends HttpServlet
 	User user = controller.loginUser(username, password);
 	if( user != null )
 	{
+            ArrayList<Task> taskList = new ArrayList<Task>();
+            taskList = controller.getAllUserTasks("1");
+            
+            request.setAttribute("tasks", taskList);
+            request.getRequestDispatcher("/TaskMainPage.jsp").forward(request, response);
+            
 	    response.sendRedirect("TaskMainPage.jsp");
 	}
     }
