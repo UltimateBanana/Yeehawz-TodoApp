@@ -1,6 +1,8 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
+
     <head>
         <!-- Bootstrap stuff -->
         <meta charset="utf-8">
@@ -32,10 +34,13 @@
         </script>
         <script>
             // MODAL STUFF
+            
             $(document).ready(function(){
 
                 $("#createTask").submit(function(){
-                    var x = $("#task").val();
+//                    var x = $("#task").val();
+                    //TODO: get from AddTaskServlet
+                    
                     
                     alert("Date : " + $("#datepickerCreateTask").val());
 
@@ -49,6 +54,7 @@
                       console.log(x);
                 });
             });
+            
 
             $(document).on('click', '.deleteMe',function(){
                 $(this).closest("li").remove();
@@ -143,21 +149,21 @@
                                 <li class="list-group-item">
                                     <div class="row center-block">
                                         <form id="createTask" action="AddTaskServlet" method="post">
-                                                <div class="col-md-10 ">
-                                                    <input type="text" class="form-control margin12" id="title" name="title" placeholder="Type Task" style="margin-bottom: 10px;">
-                                                    <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter a description" style="resize: none; margin-bottom: 10px;"></textarea>
-                                                    <input type = "text" class="datepicker" id="schedule" name="schedule" placeholder="Schedule">
-                                                    <script>
-                                                      $('.datepicker').datepicker();
-                                                    </script>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <input id = "addTask" type="submit" class="btn btn-success margin11" value="Add Task">
-                                                </div>
+                                            <div class="col-md-10 ">
+                                                <input type="text" class="form-control margin12" id="title" name="title" placeholder="Type Task" style="margin-bottom: 10px;">
+                                                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter a description" style="resize: none; margin-bottom: 10px;"></textarea>
+                                                <input type = "text" class="datepicker" id="schedule" name="schedule" placeholder="Schedule">
+                                                <script>
+                                                  $('.datepicker').datepicker();
+                                                </script>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input id = "addTask" type="submit" class="btn btn-success margin11" value="Add Task">
+                                            </div>
                                         </form>
                                     </div>
                                 </li>
-                                <li class="list-group-item" data-toggle="modal" data-target="#myModal"> 
+<!--                                <li class="list-group-item" data-toggle="modal" data-target="#myModal"> 
                                     Dapibus ac facilisis in  
                                     <span class="glyphicon glyphicon-trash pull-right deleteMe"> </span> 
                                     <span class="glyphicon glyphicon-edit pull-right editMe"> </span>
@@ -166,7 +172,15 @@
                                     Vestibulum at eros 
                                     <span class="glyphicon glyphicon-trash pull-right deleteMe"> </span> 
                                     <span class="glyphicon glyphicon-edit pull-right editMe"> </span>
-                                </li>
+                                </li>-->
+                                <c:forEach items="${tasks}" var="task">
+                                    <li class="list-group-item">
+                                        <c:out value="${task.title}" />
+                                        <span class="glyphicon glyphicon-trash pull-right deleteMe"> </span> 
+                                        <span class="glyphicon glyphicon-edit pull-right editMe"> </span>
+                                    </li>
+                                </c:forEach>
+                                    
                             </ul>
                         </div>
                     </div>
