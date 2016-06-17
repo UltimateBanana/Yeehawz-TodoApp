@@ -4,9 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Justin/Documents/GitHub/Yeehawz-TodoApp/Yeehawz/web/index.jsp</file>
+            <file>file:/C:/Users/Justin/Documents/GitHub/Yeehawz-TodoApp/Yeehawz/src/java/database/UserManager.java</file>
             <file>file:/C:/Users/Justin/Documents/GitHub/Yeehawz-TodoApp/Yeehawz/src/java/servlet/AddTaskServlet.java</file>
             <file>file:/C:/Users/Justin/Documents/GitHub/Yeehawz-TodoApp/Yeehawz/src/java/model/Task.java</file>
             <file>file:/C:/Users/Justin/Documents/GitHub/Yeehawz-TodoApp/Yeehawz/src/java/database/DatabaseConnector.java</file>
+            <file>file:/C:/Users/Justin/Documents/GitHub/Yeehawz-TodoApp/Yeehawz/src/java/database/TagManager.java</file>
             <file>file:/C:/Users/Justin/Documents/GitHub/Yeehawz-TodoApp/Yeehawz/web/TaskMainPage.jsp</file>
             <file>file:/C:/Users/Justin/Documents/GitHub/Yeehawz-TodoApp/Yeehawz/web/SignUpPage.jsp</file>
             <file>file:/C:/Users/Justin/Documents/GitHub/Yeehawz-TodoApp/Yeehawz/src/java/database/TaskManager.java</file>
