@@ -53,6 +53,12 @@
             $(document).on('click', '.deleteMe',function(){
                 $(this).closest("li").remove();
 
+                $.ajax(
+                {
+                   type: "POST",
+                   url: "DeleteTaskServlet"
+                });
+
             });
             
             $(document).on('click', '.editMe',function(){
